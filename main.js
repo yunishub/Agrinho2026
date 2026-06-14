@@ -952,3 +952,35 @@ function gerarSecaoInformativa() {
     container.appendChild(card);
   });
 }
+// ===== SISTEMA DE ACESSIBILIDADE =====
+document.addEventListener("DOMContentLoaded", function() {
+  // Botão de contraste
+  document.getElementById('btn-contraste').addEventListener('click', function() {
+    document.body.classList.toggle('alto-contraste');
+    const ativo = document.body.classList.contains('alto-contraste');
+    this.innerHTML = ativo ? '<i class="fas fa-eye-slash"></i> Normal' : '<i class="fas fa-eye"></i> Contraste';
+    adicionarLog(`👁️ Modo ${ativo ? 'alto contraste' : 'normal'} ativado.`);
+  });
+
+  // Botão de aumentar fonte
+  document.getElementById('btn-fonte-aumentar').addEventListener('click', function() {
+    document.body.classList.remove('fonte-pequena');
+    document.body.classList.toggle('fonte-grande');
+    adicionarLog(`🔍 Fonte ${document.body.classList.contains('fonte-grande') ? 'aumentada' : 'normal'}.`);
+  });
+
+  // Botão de diminuir fonte
+  document.getElementById('btn-fonte-diminuir').addEventListener('click', function() {
+    document.body.classList.remove('fonte-grande');
+    document.body.classList.toggle('fonte-pequena');
+    adicionarLog(`🔍 Fonte ${document.body.classList.contains('fonte-pequena') ? 'diminuída' : 'normal'}.`);
+  });
+
+  // Botão de pausar animações
+  document.getElementById('btn-animacoes').addEventListener('click', function() {
+    document.body.classList.toggle('animacoes-pausadas');
+    const pausado = document.body.classList.contains('animacoes-pausadas');
+    this.innerHTML = pausado ? '<i class="fas fa-play-circle"></i> Continuar' : '<i class="fas fa-pause-circle"></i> Pausar';
+    adicionarLog(`⏸️ Animações ${pausado ? 'pausadas' : 'continuadas'}.`);
+  });
+});
