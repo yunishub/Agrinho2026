@@ -1374,3 +1374,154 @@ footer {
     min-width: 80px;
   }
 }
+/* ===== BOTÕES DE ACESSIBILIDADE ===== */
+.acessibilidade-container {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #eee;
+}
+
+.btn-acessibilidade {
+  padding: 5px 12px;
+  background: #e0e0e0;
+  color: #333;
+  border: none;
+  border-radius: 15px;
+  font-weight: 700;
+  font-size: 0.7rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-family: 'Fredoka', sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.btn-acessibilidade:hover {
+  background: #d0d0d0;
+  transform: scale(1.05);
+}
+
+/* ===== MODO ALTO CONTRASTE ===== */
+.alto-contraste {
+  background: #000 !important;
+  color: #fff !important;
+}
+
+.alto-contraste .navbar {
+  background: #000 !important;
+}
+
+.alto-contraste .casa {
+  background: #222 !important;
+  border-color: #fff !important;
+}
+
+.alto-contraste .canto {
+  background: #333 !important;
+}
+
+.alto-contraste .info {
+  background: #000 !important;
+  color: #fff !important;
+  border-color: #fff !important;
+}
+
+.alto-contraste .modal-box {
+  background: #000 !important;
+  color: #fff !important;
+}
+
+.alto-contraste .modal-box h3 {
+  color: #fff !important;
+}
+
+.alto-contraste .cartao-jogador {
+  background: #222 !important;
+  color: #fff !important;
+}
+
+.alto-contraste .log-historico {
+  background: #222 !important;
+  color: #fff !important;
+  border-color: #fff !important;
+}
+
+.alto-contraste .header-jogo {
+  background: #111 !important;
+  color: #fff !important;
+}
+
+.alto-contraste .btn-rolar {
+  background: #000 !important;
+  border: 2px solid #fff !important;
+}
+
+.alto-contraste .btn-acao {
+  background: #222 !important;
+  border: 2px solid #fff !important;
+}
+
+.alto-contraste .btn-modal.primary {
+  background: #fff !important;
+  color: #000 !important;
+}
+
+/* ===== FONTE AUMENTADA ===== */
+.fonte-grande {
+  font-size: 1.3rem !important;
+}
+
+.fonte-grande .casa {
+  font-size: 1rem !important;
+}
+
+.fonte-grande .casa span {
+  font-size: 2.2rem !important;
+}
+
+.fonte-grande .cartao-jogador {
+  font-size: 1rem !important;
+}
+
+.fonte-grande .log-historico {
+  font-size: 1.1rem !important;
+}
+
+.fonte-grande .btn-rolar {
+  font-size: 1.1rem !important;
+}
+
+/* ===== FONTE DIMINUÍDA ===== */
+.fonte-pequena {
+  font-size: 0.85rem !important;
+}
+
+.fonte-pequena .casa {
+  font-size: 0.5rem !important;
+}
+
+.fonte-pequena .casa span {
+  font-size: 1.2rem !important;
+}
+
+.fonte-pequena .cartao-jogador {
+  font-size: 0.6rem !important;
+}
+
+/* ===== ANIMAÇÕES PAUSADAS ===== */
+.animacoes-pausadas .peao {
+  animation-play-state: paused !important;
+}
+
+.animacoes-pausadas .dados.animando {
+  animation-play-state: paused !important;
+}
+
+.animacoes-pausadas .dono-tag {
+  animation-play-state: paused !important;
+}
