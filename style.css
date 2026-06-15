@@ -772,6 +772,38 @@ body {
   background: #616161;
 }
 
+/* botão de troca */
+.troca-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.btn-trocar {
+  padding: 7px 18px;
+  background: linear-gradient(135deg, #0288d1, #0097a7);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-family: 'Fredoka', sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-trocar:hover {
+  background: linear-gradient(135deg, #01579b, #006064);
+  transform: scale(1.05);
+}
+
+.btn-trocar:active {
+  transform: scale(0.95);
+}
+
 /* botão de falência */
 .falencia-container {
   display: flex;
@@ -806,166 +838,156 @@ body {
   transform: scale(0.95);
 }
 
-/* ===== BOTÃO DE TROCA ===== */
-.troca-container {
+/* ===== BOTÕES DE ACESSIBILIDADE ===== */
+.acessibilidade-container {
   display: flex;
+  gap: 8px;
   justify-content: center;
-  margin-top: 8px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #eee;
 }
 
-.btn-trocar {
-  padding: 7px 18px;
-  background: linear-gradient(135deg, #0288d1, #0097a7);
-  color: white;
+.btn-acessibilidade {
+  padding: 5px 12px;
+  background: #e0e0e0;
+  color: #333;
   border: none;
-  border-radius: 20px;
+  border-radius: 15px;
   font-weight: 700;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   cursor: pointer;
   transition: all 0.3s;
   font-family: 'Fredoka', sans-serif;
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
 }
 
-.btn-trocar:hover {
-  background: linear-gradient(135deg, #01579b, #006064);
+.btn-acessibilidade:hover {
+  background: #d0d0d0;
   transform: scale(1.05);
 }
 
-.btn-trocar:active {
-  transform: scale(0.95);
+/* ===== MODO ALTO CONTRASTE ===== */
+.alto-contraste {
+  background: #000 !important;
+  color: #fff !important;
 }
 
-/* ===== MODAL DE TROCA ===== */
-.modal-troca-box {
-  max-width: 680px !important;
-  width: 95vw !important;
+.alto-contraste .navbar {
+  background: #000 !important;
 }
 
-.troca-secao {
-  margin-bottom: 14px;
-  text-align: left;
+.alto-contraste .casa {
+  background: #222 !important;
+  border-color: #fff !important;
 }
 
-.troca-secao label {
-  display: block;
-  margin-bottom: 6px;
-  font-size: 0.9rem;
+.alto-contraste .canto {
+  background: #333 !important;
 }
 
-.troca-select {
-  width: 100%;
-  padding: 7px 10px;
-  border: 2px solid #a5d6a7;
-  border-radius: 10px;
-  font-family: 'Fredoka', sans-serif;
-  font-size: 0.9rem;
-  background: #f9fbe7;
-  color: #2e7d32;
+.alto-contraste .info {
+  background: #000 !important;
+  color: #fff !important;
+  border-color: #fff !important;
 }
 
-.troca-colunas {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  margin-bottom: 16px;
+.alto-contraste .modal-box {
+  background: #000 !important;
+  color: #fff !important;
 }
 
-@media (max-width: 520px) {
-  .troca-colunas {
-    grid-template-columns: 1fr;
-  }
+.alto-contraste .modal-box h3 {
+  color: #fff !important;
 }
 
-.troca-col {
-  border: 2px solid #c8e6c9;
-  border-radius: 12px;
-  overflow: hidden;
+.alto-contraste .cartao-jogador {
+  background: #222 !important;
+  color: #fff !important;
 }
 
-.troca-col-header {
-  padding: 8px 12px;
-  font-weight: 700;
-  font-size: 0.85rem;
-  text-align: center;
+.alto-contraste .log-historico {
+  background: #222 !important;
+  color: #fff !important;
+  border-color: #fff !important;
 }
 
-.troca-col-voce {
-  background: #e8f5e9;
-  color: #2e7d32;
+.alto-contraste .header-jogo {
+  background: #111 !important;
+  color: #fff !important;
 }
 
-.troca-col-alvo {
-  background: #e3f2fd;
-  color: #1565c0;
+.alto-contraste .btn-rolar {
+  background: #000 !important;
+  border: 2px solid #fff !important;
 }
 
-.troca-campo {
-  padding: 10px 12px;
-  border-top: 1px solid #e8f5e9;
+.alto-contraste .btn-acao {
+  background: #222 !important;
+  border: 2px solid #fff !important;
 }
 
-.troca-campo label {
-  display: block;
-  font-size: 0.8rem;
-  font-weight: 600;
-  margin-bottom: 5px;
-  color: #555;
+.alto-contraste .btn-modal.primary {
+  background: #fff !important;
+  color: #000 !important;
 }
 
-.troca-input {
-  width: 100%;
-  padding: 6px 10px;
-  border: 1px solid #c8e6c9;
-  border-radius: 8px;
-  font-family: 'Fredoka', sans-serif;
-  font-size: 0.9rem;
-  box-sizing: border-box;
+/* ===== FONTE AUMENTADA ===== */
+.fonte-grande {
+  font-size: 1.3rem !important;
 }
 
-.troca-saldo-info {
-  display: block;
-  font-size: 0.73rem;
-  color: #888;
-  margin-top: 3px;
+.fonte-grande .casa {
+  font-size: 1rem !important;
 }
 
-.troca-props-lista {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  max-height: 160px;
-  overflow-y: auto;
-  padding-right: 2px;
+.fonte-grande .casa span {
+  font-size: 2.2rem !important;
 }
 
-.troca-prop-item {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.8rem;
-  cursor: pointer;
-  padding: 4px 6px;
-  border-radius: 6px;
-  transition: background 0.2s;
+.fonte-grande .cartao-jogador {
+  font-size: 1rem !important;
 }
 
-.troca-prop-item:hover {
-  background: #f1f8e9;
+.fonte-grande .log-historico {
+  font-size: 1.1rem !important;
 }
 
-.troca-prop-item input[type="checkbox"] {
-  accent-color: #43a047;
-  width: 15px;
-  height: 15px;
+.fonte-grande .btn-rolar {
+  font-size: 1.1rem !important;
 }
 
-.troca-vazio {
-  font-size: 0.78rem;
-  color: #aaa;
-  font-style: italic;
+/* ===== FONTE DIMINUÍDA ===== */
+.fonte-pequena {
+  font-size: 0.85rem !important;
+}
+
+.fonte-pequena .casa {
+  font-size: 0.5rem !important;
+}
+
+.fonte-pequena .casa span {
+  font-size: 1.2rem !important;
+}
+
+.fonte-pequena .cartao-jogador {
+  font-size: 0.6rem !important;
+}
+
+/* ===== ANIMAÇÕES PAUSADAS ===== */
+.animacoes-pausadas .peao {
+  animation-play-state: paused !important;
+}
+
+.animacoes-pausadas .dados.animando {
+  animation-play-state: paused !important;
+}
+
+.animacoes-pausadas .dono-tag {
+  animation-play-state: paused !important;
 }
 
 /* ranking */
@@ -1373,155 +1395,4 @@ footer {
     font-size: 0.85rem;
     min-width: 80px;
   }
-}
-/* ===== BOTÕES DE ACESSIBILIDADE ===== */
-.acessibilidade-container {
-  display: flex;
-  gap: 8px;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 10px;
-  padding-top: 10px;
-  border-top: 1px solid #eee;
-}
-
-.btn-acessibilidade {
-  padding: 5px 12px;
-  background: #e0e0e0;
-  color: #333;
-  border: none;
-  border-radius: 15px;
-  font-weight: 700;
-  font-size: 0.7rem;
-  cursor: pointer;
-  transition: all 0.3s;
-  font-family: 'Fredoka', sans-serif;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-
-.btn-acessibilidade:hover {
-  background: #d0d0d0;
-  transform: scale(1.05);
-}
-
-/* ===== MODO ALTO CONTRASTE ===== */
-.alto-contraste {
-  background: #000 !important;
-  color: #fff !important;
-}
-
-.alto-contraste .navbar {
-  background: #000 !important;
-}
-
-.alto-contraste .casa {
-  background: #222 !important;
-  border-color: #fff !important;
-}
-
-.alto-contraste .canto {
-  background: #333 !important;
-}
-
-.alto-contraste .info {
-  background: #000 !important;
-  color: #fff !important;
-  border-color: #fff !important;
-}
-
-.alto-contraste .modal-box {
-  background: #000 !important;
-  color: #fff !important;
-}
-
-.alto-contraste .modal-box h3 {
-  color: #fff !important;
-}
-
-.alto-contraste .cartao-jogador {
-  background: #222 !important;
-  color: #fff !important;
-}
-
-.alto-contraste .log-historico {
-  background: #222 !important;
-  color: #fff !important;
-  border-color: #fff !important;
-}
-
-.alto-contraste .header-jogo {
-  background: #111 !important;
-  color: #fff !important;
-}
-
-.alto-contraste .btn-rolar {
-  background: #000 !important;
-  border: 2px solid #fff !important;
-}
-
-.alto-contraste .btn-acao {
-  background: #222 !important;
-  border: 2px solid #fff !important;
-}
-
-.alto-contraste .btn-modal.primary {
-  background: #fff !important;
-  color: #000 !important;
-}
-
-/* ===== FONTE AUMENTADA ===== */
-.fonte-grande {
-  font-size: 1.3rem !important;
-}
-
-.fonte-grande .casa {
-  font-size: 1rem !important;
-}
-
-.fonte-grande .casa span {
-  font-size: 2.2rem !important;
-}
-
-.fonte-grande .cartao-jogador {
-  font-size: 1rem !important;
-}
-
-.fonte-grande .log-historico {
-  font-size: 1.1rem !important;
-}
-
-.fonte-grande .btn-rolar {
-  font-size: 1.1rem !important;
-}
-
-/* ===== FONTE DIMINUÍDA ===== */
-.fonte-pequena {
-  font-size: 0.85rem !important;
-}
-
-.fonte-pequena .casa {
-  font-size: 0.5rem !important;
-}
-
-.fonte-pequena .casa span {
-  font-size: 1.2rem !important;
-}
-
-.fonte-pequena .cartao-jogador {
-  font-size: 0.6rem !important;
-}
-
-/* ===== ANIMAÇÕES PAUSADAS ===== */
-.animacoes-pausadas .peao {
-  animation-play-state: paused !important;
-}
-
-.animacoes-pausadas .dados.animando {
-  animation-play-state: paused !important;
-}
-
-.animacoes-pausadas .dono-tag {
-  animation-play-state: paused !important;
 }
