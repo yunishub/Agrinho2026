@@ -1,3 +1,19 @@
+# 🌱 AgroPoly — Império Sustentável
+
+> Jogo de tabuleiro educativo inspirado no Monopoly, desenvolvido para o **Concurso de Programação Agrinho 2026**.  
+> Tema: *Equilíbrio entre Produção e Meio Ambiente*
+
+---
+
+## 📖 Sobre o Projeto
+
+AgroPoly é um jogo de tabuleiro digital em que os jogadores competem para construir o maior império agrícola sustentável do Brasil. Cada propriedade representa uma prática ou tecnologia verde real — de biodigestores a corredores ecológicos — e todas as informações têm fontes científicas verificadas (Embrapa, FAO, ANA, SENAR, etc.).
+
+O jogo une **diversão, estratégia e aprendizado**, ensinando de forma lúdica:
+- Economia circular no agronegócio
+- Manejo ambiental e Código Florestal Brasileiro
+- Tecnologias verdes (energia solar, gotejamento, biodigestor)
+- Sucessão familiar no campo
 
 ---
 
