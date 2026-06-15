@@ -255,6 +255,63 @@ function declararFalencia(jogador) {
   passarTurno();
 }
 
+// ===== SISTEMA DE ACESSIBILIDADE =====
+document.addEventListener("DOMContentLoaded", function() {
+  // Botão de contraste
+  document.getElementById('btn-contraste').addEventListener('click', function() {
+    document.body.classList.toggle('alto-contraste');
+    const ativo = document.body.classList.contains('alto-contraste');
+    this.innerHTML = ativo ? '<i class="fas fa-eye-slash"></i> Normal' : '<i class="fas fa-eye"></i> Contraste';
+    adicionarLog(`👁️ Modo ${ativo ? 'alto contraste' : 'normal'} ativado.`);
+  });
+
+  // Botão de aumentar fonte
+  document.getElementById('btn-fonte-aumentar').addEventListener('click', function() {
+    document.body.classList.remove('fonte-pequena');
+    document.body.classList.toggle('fonte-grande');
+    adicionarLog(`🔍 Fonte ${document.body.classList.contains('fonte-grande') ? 'aumentada' : 'normal'}.`);
+  });
+
+  // Botão de diminuir fonte
+  document.getElementById('btn-fonte-diminuir').addEventListener('click', function() {
+    document.body.classList.remove('fonte-grande');
+    document.body.classList.toggle('fonte-pequena');
+    adicionarLog(`🔍 Fonte ${document.body.classList.contains('fonte-pequena') ? 'diminuída' : 'normal'}.`);
+  });
+
+  // Botão de pausar animações
+  document.getElementById('btn-animacoes').addEventListener('click', function() {
+    document.body.classList.toggle('animacoes-pausadas');
+    const pausado = document.body.classList.contains('animacoes-pausadas');
+    this.innerHTML = pausado ? '<i class="fas fa-play-circle"></i> Continuar' : '<i class="fas fa-pause-circle"></i> Pausar';
+    adicionarLog(`⏸️ Animações ${pausado ? 'pausadas' : 'continuadas'}.`);
+  });
+
+  // Atalhos de teclado
+  document.addEventListener('keydown', function(e) {
+    // Alt + C = Contraste
+    if (e.altKey && e.key === 'c') {
+      document.getElementById('btn-contraste').click();
+      e.preventDefault();
+    }
+    // Alt + + = Aumentar fonte
+    if (e.altKey && e.key === '+') {
+      document.getElementById('btn-fonte-aumentar').click();
+      e.preventDefault();
+    }
+    // Alt + - = Diminuir fonte
+    if (e.altKey && e.key === '-') {
+      document.getElementById('btn-fonte-diminuir').click();
+      e.preventDefault();
+    }
+    // Alt + P = Pausar animações
+    if (e.altKey && e.key === 'p') {
+      document.getElementById('btn-animacoes').click();
+      e.preventDefault();
+    }
+  });
+});
+
 // ===== INICIALIZAÇÃO =====
 document.addEventListener("DOMContentLoaded", function() {
   console.log("DOM carregado!");
@@ -652,7 +709,6 @@ function verificarFalencia() {
 }
 
 // ===== SISTEMA DE TROCA =====
-
 function abrirModalTroca() {
   const jogador = listaJogadores[turnoAtual];
   const outrosAtivos = listaJogadores.filter(j => j.ativo && j.id !== jogador.id);
@@ -817,7 +873,7 @@ async function processarPropostaTroca(proponente, alvo, dinheiroOferta, dinheiro
   let aceito = false;
 
   if (alvo.isBot) {
-    // Lógica de decisão do bot: aceita se o valor recebido for igual ou maior ao oferecido
+    // Lógica de decisão do bot
     const valorOfertaProps = propsOferta.reduce((s, p) => s + p.preco, 0);
     const valorPedidoProps = propsPedido.reduce((s, p) => s + p.preco, 0);
     const ganhoBot = dinheiroPedido + valorPedidoProps;
@@ -848,7 +904,7 @@ function executarTroca(proponente, alvo, dinheiroOferta, dinheiroPedido, idsOfer
   alvo.saldo -= dinheiroPedido;
   proponente.saldo += dinheiroPedido;
 
-  // Transferir propriedades da oferta: proponente → alvo
+  // Transferir propriedades da oferta: proponente -> alvo
   idsOferta.forEach(id => {
     donoPropriedades[id] = alvo.id;
     const elCasa = nosCasasDOM[id];
@@ -861,7 +917,7 @@ function executarTroca(proponente, alvo, dinheiroOferta, dinheiroPedido, idsOfer
     if (elCasa) elCasa.appendChild(tag);
   });
 
-  // Transferir propriedades do pedido: alvo → proponente
+  // Transferir propriedades do pedido: alvo -> proponente
   idsPedido.forEach(id => {
     donoPropriedades[id] = proponente.id;
     const elCasa = nosCasasDOM[id];
@@ -952,35 +1008,3 @@ function gerarSecaoInformativa() {
     container.appendChild(card);
   });
 }
-// ===== SISTEMA DE ACESSIBILIDADE =====
-document.addEventListener("DOMContentLoaded", function() {
-  // Botão de contraste
-  document.getElementById('btn-contraste').addEventListener('click', function() {
-    document.body.classList.toggle('alto-contraste');
-    const ativo = document.body.classList.contains('alto-contraste');
-    this.innerHTML = ativo ? '<i class="fas fa-eye-slash"></i> Normal' : '<i class="fas fa-eye"></i> Contraste';
-    adicionarLog(`👁️ Modo ${ativo ? 'alto contraste' : 'normal'} ativado.`);
-  });
-
-  // Botão de aumentar fonte
-  document.getElementById('btn-fonte-aumentar').addEventListener('click', function() {
-    document.body.classList.remove('fonte-pequena');
-    document.body.classList.toggle('fonte-grande');
-    adicionarLog(`🔍 Fonte ${document.body.classList.contains('fonte-grande') ? 'aumentada' : 'normal'}.`);
-  });
-
-  // Botão de diminuir fonte
-  document.getElementById('btn-fonte-diminuir').addEventListener('click', function() {
-    document.body.classList.remove('fonte-grande');
-    document.body.classList.toggle('fonte-pequena');
-    adicionarLog(`🔍 Fonte ${document.body.classList.contains('fonte-pequena') ? 'diminuída' : 'normal'}.`);
-  });
-
-  // Botão de pausar animações
-  document.getElementById('btn-animacoes').addEventListener('click', function() {
-    document.body.classList.toggle('animacoes-pausadas');
-    const pausado = document.body.classList.contains('animacoes-pausadas');
-    this.innerHTML = pausado ? '<i class="fas fa-play-circle"></i> Continuar' : '<i class="fas fa-pause-circle"></i> Pausar';
-    adicionarLog(`⏸️ Animações ${pausado ? 'pausadas' : 'continuadas'}.`);
-  });
-});
